@@ -1,18 +1,37 @@
-## Getting Started
+Description
+Author: Adrian Lazo Cabrer
+Version 1.0.0 Entrega Final
+Clases usadas:
+User, Graph, RecommendationEngine, User, App
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+La clase User representa a un usuario dentro de la aplicación. Cada usuario tiene los siguientes atributos:
 
-## Folder Structure
+name: El nombre del usuario.
+age: La edad del usuario.
+interests: Una lista de intereses del usuario (por ejemplo, música, arte).
+friends: Una lista de amigos del usuario.
+Métodos principales:
 
-The workspace contains two folders by default, where:
+addFriend(User user): Agrega un nuevo amigo al usuario.
+getName(): Devuelve el nombre del usuario.
+getFriends(): Devuelve la lista de amigos del usuario.
+getInterests(): Devuelve la lista de intereses del usuario.
+Graph
+La clase Graph gestiona un conjunto de usuarios y sus conexiones. Funciona como una red social simple.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Métodos principales:
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+addUser(User user): Añade un nuevo usuario al gráfico.
+addConnection(User user1, User user2): Crea una conexión (amistad) entre dos usuarios.
+printGraph(): Imprime todos los usuarios y sus amigos en la consola.
+recommendFriends(User user): Recomendaciones de amigos para un usuario basado en intereses compartidos.
+RecommendationEngine
+La clase RecommendationEngine es responsable de recomendar nuevos amigos para un usuario en función de intereses compartidos.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Métodos principales:
 
-## Dependency Management
+recommendFriends(User user, Graph graph): Recomendaciones de amigos para el usuario dado.
+calculateSimilarity(User user1, User user2): Calcula la similitud entre dos usuarios basada en sus intereses.
+App
+La clase App contiene el método principal main, donde se crean los usuarios, se establecen sus conexiones y se imprimen las recomendaciones de amigos.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
